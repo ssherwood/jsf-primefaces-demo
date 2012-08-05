@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+
+    <h:form id="loggingTableForm">
+        <p:dataTable id="loggingTable" styleClass="autoWidthTable"
+                     var="vLog" value="#{logbackManagerBean.loggerList}"
+                     paginator="true"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     rows="25" rowsPerPageTemplate="25, 50">
+
+            <p:column id="loggingTable_logName" headerText="Name" filterBy="#{vLog.name}" filterMatchMode="contains">
+                #{vLog.name}
+            </p:column>
+
+            <p:column id="loggingTable_logLevel" headerText="Level">
+                #{vLog.level}
+            </p:column>
+
+            <p:column id="loggingTable_effectiveLogLevel" headerText="Effective Level">
+                #{vLog.effectiveLevel}
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</ui:composition>
+
+</html>

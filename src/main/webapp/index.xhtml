@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>JSF Primefaces Showcase</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <h:outputStylesheet library="css" name="base.css"/>
+</h:head>
+
+<h:body>
+    <p:panel>
+        <f:facet name="header">
+            <h:graphicImage id="underTree" library="images" name="underTree_logo.jpg"/>
+            <br/>
+            <h:outputText value="underTree LLC"/> - <h:outputText value="JSF2 Primefaces Reference Application"/>
+            <br/>
+            <h:outputLink value="j_spring_security_logout">logout</h:outputLink>
+
+            <p:tooltip for="underTree">
+                <ul>
+                    <li>Built-By: #{manifestBean.manifestBuiltBy}</li>
+                    <li>Build-Jdk: #{manifestBean.manifestBuildJDK}</li>
+                    <li>Path: #{manifestBean.manifestPath}</li>
+                </ul>
+            </p:tooltip>
+        </f:facet>
+
+        <f:facet name="footer">
+            <ui:include src="templates/copyright.xhtml"/>
+        </f:facet>
+
+        <p:breadCrumb>
+            <p:menuitem value="Home" url="#"/>
+        </p:breadCrumb>
+
+        <p:tabView id="mainTabView">
+            <p:tab id="homeTab" title="Home">
+                <p:tabView orientation="left">
+                    <p:tab title="Main">
+                        <h:outputText value="Lorem 1"/>
+                    </p:tab>
+                    <p:tab title="Sub">
+                        <h:outputText value="Lorem 2"/>
+                    </p:tab>
+                    <p:tab title="Sub2">
+                        <h:outputText value="Lorem 3"/>
+                    </p:tab>
+                    <p:tab title="Sub3">
+                        <h:outputText value="Lorem 4"/>
+                    </p:tab>
+                </p:tabView>
+            </p:tab>
+
+            <p:tab id="reportsTab" title="Reports">
+                <p:tabView orientation="left">
+                    <p:tab title="Main">
+                        <h:outputText value="Lorem 5"/>
+                    </p:tab>
+                    <p:tab title="Sub">
+                        <h:outputText value="Lorem 6"/>
+                    </p:tab>
+                </p:tabView>
+            </p:tab>
+
+            <ui:include src="templates/admin.xhtml"/>
+        </p:tabView>
+
+    </p:panel>
+</h:body>
+</html>

@@ -1,0 +1,17 @@
+/* fixes table width from spilling over borders */
+
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 90% !important;
+}
+         
+.ui-datatable table {
+	table-layout: fixed
+}
+
+.ui-datatable table thead th {
+	white-space: normal
+}
+
+.autoWidthTable.ui-datatable table {
+   width: auto;
+}

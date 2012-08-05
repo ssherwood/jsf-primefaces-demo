@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+    <p:panelGrid columns="2" style="width:100%">
+        <f:facet name="header">Runtime Information</f:facet>
+
+        <h:outputLabel for="name" value="Process Name:"/>
+        <h:outputText id="name" value="#{systemInfoBean.name}"/>
+
+        <h:outputLabel for="vmName" value="VM Name:"/>
+        <h:outputText id="vmName" value="#{systemInfoBean.vmName}"/>
+
+        <h:outputLabel for="vmVendor" value="VM Vendor:"/>
+        <h:outputText id="vmVendor" value="#{systemInfoBean.vmVendor}"/>
+
+        <h:outputLabel for="vmVersion" value="Version:"/>
+        <h:outputText id="vmVersion" value="#{systemInfoBean.javaVersion} (build #{systemInfoBean.vmVersion})"/>
+
+        <h:outputLabel for="jvmStartTime" value="Start Time (Uptime):"/>
+        <h:outputText id="jvmStartTime" value="#{systemInfoBean.JVMStartTime} (#{systemInfoBean.JVMUptime})"/>
+
+        <h:outputLabel for="availableProcessors" value="Available Processors:"/>
+        <h:outputText id="availableProcessors" value="#{systemInfoBean.availableProcessors}"/>
+
+        <h:outputLabel for="maxMemory" value="Max Memory:"/>
+        <h:outputText id="maxMemory" value="#{systemInfoBean.maxMemory} MB"/>
+
+        <h:outputLabel for="totalMemory" value="Total Memory:"/>
+        <h:outputText id="totalMemory" value="#{systemInfoBean.totalMemory} MB"/>
+
+        <h:outputLabel for="usedMemory" value="Used Memory:"/>
+        <h:outputText id="usedMemory" value="#{systemInfoBean.usedMemory} MB"/>
+
+        <h:outputLabel for="freeMemory" value="Free Memory:"/>
+        <h:outputText id="freeMemory" value="#{systemInfoBean.freeMemory} MB"/>
+    </p:panelGrid>
+</ui:composition>
+</html>

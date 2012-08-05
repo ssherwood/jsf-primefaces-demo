@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+    <h:form id="admin_environmentForm">
+        <p:dataTable id="admin_environmentForm_DataTable"
+                     var="property" value="#{systemInfoBean.systemEnv}"
+                     paginator="true"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     rows="20" rowsPerPageTemplate="10,20,30">
+
+            <p:column id="admin_environmentForm_DataTable_PropertyCol" headerText="Property" sortBy="#{property.key}">
+                #{property.key}
+            </p:column>
+
+            <p:column id="admin_environmentForm_DataTable_ValueCol" headerText="Value" sortBy="#{property.value}">
+                #{property.value}
+            </p:column>
+
+        </p:dataTable>
+    </h:form>
+</ui:composition>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+    <h:form id="sessions_TableForm">
+        <p:dataTable id="sessions_Table"
+                     var="userSession" value="#{userSessionBean.currentUserSessions}"
+                     paginator="true"
+                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                     rows="25" rowsPerPageTemplate="25, 50">
+
+            <p:column id="sessionTable_userName" headerText="User Id">
+                #{userSession.userName}
+            </p:column>
+
+            <p:column id="sessionTable_sessionId" headerText="Session Id">
+                #{userSession.sessionId}
+            </p:column>
+
+            <p:column id="sessionTable_remoteAddress" headerText="Remote Address">
+                #{userSession.remoteAddress}
+            </p:column>
+
+            <p:column id="sessionTable_creationTime" headerText="Creation">
+                <h:outputText value="#{userSession.creationTime}">
+                    <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>
+                </h:outputText>
+            </p:column>
+
+            <p:column id="sessionTable_lastAccessTime" headerText="Last Access">
+                <h:outputText value="#{userSession.lastAccessTime}">
+                    <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss"/>
+                </h:outputText>
+            </p:column>
+
+            <p:column id="sessionTable_usedTime" headerText="Active">
+                <h:outputText value="#{userSession.usedTime}">
+                    <f:convertDateTime pattern="HH:mm:ss"/>
+                </h:outputText>
+            </p:column>
+
+            <p:column id="sessionTable_inactiveTime" headerText="Inactive">
+                <h:outputText value="#{userSession.inactiveTime}">
+                    <f:convertDateTime pattern="HH:mm:ss"/>
+                </h:outputText>
+            </p:column>
+
+            <p:column id="sessionTable_timeToLive" headerText="TTL">
+                <h:outputText value="#{userSession.timeToLive}">
+                    <f:convertDateTime pattern="HH:mm:ss"/>
+                </h:outputText>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</ui:composition>
+</html>

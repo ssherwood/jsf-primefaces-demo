@@ -1,0 +1,78 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+	<display-name>underTree LLC Presents: JSF2 Primefaces Showcase</display-name>
+	<description></description>
+
+	<welcome-file-list>
+		<welcome-file>index.xhtml</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+   	<session-config>
+  		<!-- expire the session after 5 minutes of inactivity (this is intentionally low for testing purposes) -->
+        <session-timeout>5</session-timeout>
+    </session-config>
+    
+	<listener>
+        <listener-class>com.undertree.showcase.jsf2.primefaces.admin.UserSessionListener</listener-class>
+    </listener>
+    <listener>
+	    <description>Bootstrap listener to start up Spring's root WebApplicationContext</description>
+    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>	
+	</listener>
+	<!-- 
+	<listener>
+		<description>Servlet 2.4+ listener that exposes the request to the current thread, through both LocaleContextHolder and RequestContextHolder.</description>
+    	<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	 -->
+
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+    <context-param>
+    	<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+    	<param-value>/WEB-INF/springsecurity.taglib.xml</param-value>
+	</context-param>
+	
+	<!--  
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>casablanca</param-value>
+	</context-param>
+	-->
+	
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/META-INF/spring/applicationContext-security.xml</param-value>
+    </context-param>
+</web-app>

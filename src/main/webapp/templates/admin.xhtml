@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+    <p:tab id="adminTab" title="Admin" rendered="#{sec:areAnyGranted('ROLE_ADMIN')}">
+        <p:tabView orientation="left" dynamic="true" cache="false">
+            <p:tab title="JMX">
+                <h:outputText value="Lorem 8"/>
+            </p:tab>
+
+            <p:tab title="Logging">
+                <ui:include src="admin/logback.xhtml"/>
+            </p:tab>
+
+            <p:tab title="Sessions">
+                <ui:include src="admin/sessions.xhtml"/>
+            </p:tab>
+
+            <p:tab title="JVM">
+                <ui:include src="admin/runtime.xhtml"/>
+            </p:tab>
+
+            <p:tab title="Host Environment">
+                <ui:include src="admin/environment.xhtml"/>
+            </p:tab>
+
+            <p:tab title="System Properties">
+                <ui:include src="admin/properties.xhtml"/>
+            </p:tab>
+
+        </p:tabView>
+    </p:tab>
+</ui:composition>
+</html>
