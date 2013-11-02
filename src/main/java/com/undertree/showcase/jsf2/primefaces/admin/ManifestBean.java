@@ -35,12 +35,12 @@ public class ManifestBean implements Serializable {
 
     public ManifestBean() {
         LOG.trace("Creating ManifestBean");
-        try {
-            localWarManifest =
-                    new Manifest(FacesContext.getCurrentInstance().getExternalContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+//        try {
+//            localWarManifest =
+//                    new Manifest(FacesContext.getCurrentInstance().getExternalContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
+//        } catch (IOException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
     }
 
     @PostConstruct
