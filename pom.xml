@@ -8,7 +8,7 @@
 	<packaging>war</packaging>
 
 	<name>jsf2-primefaces</name>
-	<url></url>
+	<url/>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,7 +26,7 @@
 		<primefaces.version>4.0</primefaces.version>
 		<casablanca.version>1.0.10</casablanca.version>
 		
-		<springframework.security.version>3.1.4.RELEASE</springframework.security.version>
+		<springframework.security.version>4.2.3.RELEASE</springframework.security.version>
 		<springframework.webflow.version>2.3.2.RELEASE</springframework.webflow.version>
 		
 		<junit.version>4.11</junit.version>
