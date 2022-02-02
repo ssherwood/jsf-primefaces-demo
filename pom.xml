@@ -19,7 +19,7 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<logback.version>1.2.0</logback.version>
 		<commons-lang3.version>3.1</commons-lang3.version>
-		<guava.version>24.1.1-jre</guava.version>
+		<guava.version>30.0-android</guava.version>
 		
 		<javax.servlet-api.version>3.0.1</javax.servlet-api.version>
 		<apache.myfaces.version>2.3.5</apache.myfaces.version>
