@@ -25,7 +25,7 @@
 		<apache.myfaces.version>2.3-next-M1</apache.myfaces.version>
 		<primefaces.version>6.2</primefaces.version>
 		<casablanca.version>1.0.10</casablanca.version>		
-		<springframework.security.version>4.2.16.RELEASE</springframework.security.version>
+		<springframework.security.version>4.2.17.RELEASE</springframework.security.version>
 		<springframework.webflow.version>2.4.8.RELEASE</springframework.webflow.version>
 		<junit.version>4.11</junit.version>
 	</properties>
