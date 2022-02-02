@@ -22,6 +22,7 @@
 		<guava.version>24.1.1-jre</guava.version>
 		
 		<javax.servlet-api.version>3.0.1</javax.servlet-api.version>
+		<apache.myfaces.version>2.3.5</apache.myfaces.version>
 		<apache.myfaces.version>2.3-next-M1</apache.myfaces.version>
 		<primefaces.version>7.0</primefaces.version>
 		<casablanca.version>1.0.10</casablanca.version>		
